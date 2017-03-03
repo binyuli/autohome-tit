@@ -1,0 +1,9 @@
+.idea/
+*.pyc
+*.log
+*.txt
+
+/.settings/
+/.project
+/.pydevproject
+*.*~
