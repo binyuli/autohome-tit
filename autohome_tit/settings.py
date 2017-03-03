@@ -100,7 +100,7 @@ SCHEDULER_PERSIST = True
 # LOG_FILE = 'log.txt'
 
 
-MONGODB_SERVER = "localhost"
+MONGODB_SERVER = "192.168.17.61"
 MONGODB_PORT = 27017
 MONGODB_DB = "Autohome_tit"
 
@@ -138,7 +138,7 @@ ITEM_PIPELINES = {
 }
 
 
-REDIS_HOST = 'localhost'
+REDIS_HOST = '192.168.17.51'
 REDIS_PORT = 6379
 
 FILTER_MOD = 'Update'
