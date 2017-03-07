@@ -189,9 +189,9 @@ def get_koubei_start_url():
 
 def save_brandlist(result):
     collection = db['Brand']
-    cid=result['cid']
-    cids=connection.find_one({'cid':cid})
-    if not cids:
+    cid = result['cid']
+    cid_brand = collection.find_one({'cid':cid})
+    if not cid_brand:
         collection.save(result)
 
 

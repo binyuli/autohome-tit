@@ -65,9 +65,15 @@ class AutohomeKoubeiSpider(RedisSpider):
         soup = BeautifulSoup(info, 'lxml')
 
         # author name,id,evaluate time
-        result['author_name'] = soup.find('a',id='ahref_UserId').get_text().strip()
-        result['author_id'] = soup.find('input',id='hidAuthorId').get('value')
-        result['eval_time'] = soup.find('input',id='hidEvalCreated').get('value')
+        authorName = soup.find('a',id='ahref_UserId')
+        if authorName:
+            result['author_name'] = authorName.get_text().strip()
+        authorId = soup.find('input',id='hidAuthorId')
+        if authorId:
+            result['author_id'] = authorId.get('value')
+        evalTime = soup.find('input',id='hidEvalCreated')
+        if evalTime:
+            result['eval_time'] = evalTime.get('value')
 
         # breadnav,url,title
         breadnav = soup.find('div',class_="breadnav")

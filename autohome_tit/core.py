@@ -45,7 +45,7 @@ import json
 # BaojiaUrlSpider = AutohomeBaojiaSpider()
 # ConfigSpider = AutohomeConfigSpider()
 # BrandInfoSpider = AutohomeBrandInfoSpider()
-# BrandListUrlSpider = AutohomeBrandListUrlSpider()
+BrandListUrlSpider = AutohomeBrandListUrlSpider()
 # CarStoreSpider = AutohomeCarStoreSpider()
 # DealerSpider = AutohomeDealerSpider()
 # DealerinfoSpider = AutohomeDealerinfoSpider
