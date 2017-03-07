@@ -189,7 +189,10 @@ def get_koubei_start_url():
 
 def save_brandlist(result):
     collection = db['Brand']
-    collection.save(result)
+    cid=result['cid']
+    cids=connection.find_one({'cid':cid})
+    if not cids:
+        collection.save(result)
 
 
 def save_dealerlist(result):

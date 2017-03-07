@@ -49,7 +49,18 @@ class KoubeiPipeline(object):
 
     @check_spider_pipeline
     def process_item(self, item, spider):
-        self.collection.insert(dict(item))
+        result = dict(item)
+        url = result['url']
+        urls = self.collection.find_one({'url': url})
+        if not urls:
+            self.collection.insert(result)
+            log.msg("BrandInfoItem %s create to mongodb database!" % url, level=log.DEBUG, spider=spider)
+
+        else:
+            # brand同样一旦检测到id存在,直接丢弃掉
+            return DropItem
+            log.DEBUG("The brand has existed")
+
         return item
 
 
